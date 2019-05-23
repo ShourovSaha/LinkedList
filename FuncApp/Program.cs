@@ -23,6 +23,12 @@ namespace FuncApp
             Func<decimal, decimal> _calculatePower = x => x * x;
             decimal result = _calculatePower(2);
             Console.WriteLine(result);
+
+            Action<string> _myAction = str =>
+            {
+                Console.WriteLine(str);
+            };
+            _myAction("This is Action type delegate");
             Console.ReadKey();
         }
 
