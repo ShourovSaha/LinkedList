@@ -8,7 +8,7 @@ namespace FuncApp
 {
     class Program
     {
-        public delegate decimal CalculatePower(decimal n);
+        //public delegate decimal CalculatePower(decimal n);
         //static CalculatePower _calculatePower = Power;
         static void Main(string[] args)
         {
@@ -19,7 +19,8 @@ namespace FuncApp
             //                                        return num * num;
             //                                    });
 
-            CalculatePower _calculatePower = x => x * x; 
+            //CalculatePower _calculatePower = x => x * x;
+            Func<decimal, decimal> _calculatePower = x => x * x;
             decimal result = _calculatePower(2);
             Console.WriteLine(result);
             Console.ReadKey();
