@@ -9,10 +9,16 @@ namespace FuncApp
     class Program
     {
         public delegate decimal CalculatePower(decimal n);
-        static CalculatePower _calculatePower = Power;
+        //static CalculatePower _calculatePower = Power;
         static void Main(string[] args)
         {
-            decimal result = _calculatePower.Invoke(2);
+            //decimal result = _calculatePower.Invoke(2);
+            CalculatePower _calculatePower = new CalculatePower(
+                                                delegate(decimal num) 
+                                                {
+                                                    return num * num;
+                                                });
+            decimal result = _calculatePower(2);
             Console.WriteLine(result);
             Console.ReadKey();
         }
