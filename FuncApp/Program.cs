@@ -13,20 +13,22 @@ namespace FuncApp
         static void Main(string[] args)
         {
             //decimal result = _calculatePower.Invoke(2);
-            CalculatePower _calculatePower = new CalculatePower(
-                                                delegate(decimal num) 
-                                                {
-                                                    return num * num;
-                                                });
+            //CalculatePower _calculatePower = new CalculatePower(
+            //                                    delegate(decimal num) 
+            //                                    {
+            //                                        return num * num;
+            //                                    });
+
+            CalculatePower _calculatePower = x => x * x; 
             decimal result = _calculatePower(2);
             Console.WriteLine(result);
             Console.ReadKey();
         }
 
-        public static decimal Power(decimal num)
-        {
-            return num * num;
-        }
+        //public static decimal Power(decimal num)
+        //{
+        //    return num * num;
+        //}
 
     }
 }
