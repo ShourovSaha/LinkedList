@@ -24,11 +24,13 @@ namespace FuncApp
             decimal result = _calculatePower(2);
             Console.WriteLine(result);
 
-            Action<string> _myAction = str =>
-            {
-                Console.WriteLine(str);
-            };
+            Action<string> _myAction = str => Console.WriteLine(str);
             _myAction("This is Action type delegate");
+
+            Predicate<string> _myPredicate = str => str.Length > 5;
+            bool result2 = _myPredicate("Sho");
+            Console.WriteLine(result2);
+
             Console.ReadKey();
         }
 
