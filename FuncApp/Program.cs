@@ -31,6 +31,18 @@ namespace FuncApp
             bool result2 = _myPredicate("Sho");
             Console.WriteLine(result2);
 
+
+            Predicate<Student> IsAGradeStudentExist = x => x.Grade >= 4.00;
+
+            List<Student> students = new List<Student>
+            {
+                new Student{Roll = 2, Name = "Max", Grade = 3.75},
+                new Student {Roll = 5, Name = "Sid", Grade = 4.5},
+                new Student {Roll = 5, Name = "Joo", Grade = 4.5}
+            };
+            Console.WriteLine("Student Name: " + students.Find(IsAGradeStudentExist).Name);
+            
+
             Console.ReadKey();
         }
 
@@ -39,5 +51,12 @@ namespace FuncApp
         //    return num * num;
         //}
 
+    }
+
+    public class Student
+    {
+        public int Roll { get; set; }
+        public string Name { get; set; }
+        public double Grade { get; set; }
     }
 }
